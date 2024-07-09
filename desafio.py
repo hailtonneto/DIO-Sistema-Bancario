@@ -174,13 +174,13 @@ def menu():
     menu = """\n
     ========== BANCO ===========
     
-    [d]\tDEPOSITAR
-    [s]\tSACAR
-    [e]\tEXTRATO
-    [nc]\tNOVA CONTA
-    [lc]\tLISTAR CONTAS
-    [nu]\tNOVO CLIENTE
-    [q]\tSAIR
+    [D]\tDEPOSITAR
+    [S]\tSACAR
+    [E]\tEXTRATO
+    [C]\tNOVA CONTA
+    [L]\tLISTAR CONTAS
+    [U]\tNOVO USUÁRIO
+    [F]\tFINALIZAR
     
     ============================
 
@@ -312,29 +312,30 @@ def main():
     while True:
         opcao = menu()
         
-        if opcao == 'd':
+        if opcao == 'D':
             depositar(clientes)
             
-        elif opcao == 's':
+        elif opcao == 'S':
             sacar(clientes)
         
-        elif opcao == 'e':
+        elif opcao == 'E':
             exibirExtrato(clientes)
             
-        elif opcao == 'nu':
+        elif opcao == 'U':
             criarCliente(clientes)
         
-        elif opcao == 'nc':
+        elif opcao == 'C':
             numeroConta = len(contas) + 1
             criarConta(numeroConta, clientes, contas)
         
-        elif opcao == 'lc':
+        elif opcao == 'L':
             listarContas(contas)
         
-        elif opcao == 'q':
+        elif opcao == 'F':
             break
         
         else:
             print('Operação Inválida, por favor selecione novamente a operação desejada.')
-    
+
+
 main()
