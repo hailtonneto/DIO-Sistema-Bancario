@@ -55,7 +55,7 @@ class Conta:
         return self._historico
     
     def sacar(self, valor):
-        saldo = self.sacar
+        saldo = self.saldo
         excedeuSaldo = valor > saldo
         
         if excedeuSaldo:
@@ -125,7 +125,7 @@ class Historico:
         self._transacoes.append({
             'tipo': transacao.__class__.__name__,
             'valor': transacao.valor,
-            'data': datetime.now().strftime('%d-%m-%Y %H:%M:%s'),
+            'data': datetime.now().strftime('%D-%m-%Y %H:%M:%S'),
         })
 
 
@@ -294,7 +294,7 @@ def criarConta(numeroConta, clientes, contas):
     
     conta = ContaCorrente.novaConta(cliente=cliente, numero=numeroConta)
     contas.append(conta)
-    clientes.contas.append(conta)
+    cliente.contas.append(conta)
     
     print('\n=== CONTA CRIADA COM SUCESSO! ===')
 
